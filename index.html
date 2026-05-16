@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GeoScanner Pro - 3D Tomography Analyzer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-content">
+        <h1>🔍 GeoScanner Pro</h1>
+        <p>سیستم تحلیل سه‌بعدی توموگرافی مقاومت الکتریکی</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="upload-section">
+        <div class="upload-box">
+          <div class="upload-icon">📁</div>
+          <h2>انتخاب فایل CSV</h2>
+          <p>فایل داده‌های اندازه‌گیری خود را انتخاب کنید</p>
+          <button id="selectBtn" class="btn btn-primary">📂 انتخاب فایل</button>
+          <div id="fileInfo" class="file-info"></div>
+        </div>
+      </section>
+
+      <section class="analysis-section" id="analysisSection" style="display: none;">
+        <div class="analysis-box">
+          <h2>تحلیل داده‌ها</h2>
+          <button id="analyzeBtn" class="btn btn-success" disabled>
+            <span id="analyzeText">⚙️ شروع تحلیل</span>
+            <span id="spinner" style="display: none;" class="spinner"></span>
+          </button>
+          <div id="status" class="status-message"></div>
+        </div>
+      </section>
+
+      <section class="results-section" id="resultsSection" style="display: none;">
+        <h2>📊 نتایج تحلیل</h2>
+        <div class="results-grid">
+          <div class="result-card" id="volumeCard" style="display: none;">
+            <div class="result-icon">📈</div>
+            <h3>Volume Tomography</h3>
+            <p>نمودار مقاومت الکتریکی سه‌بعدی</p>
+            <button class="btn btn-secondary" onclick="openVolume()">🔗 باز کردن نمودار</button>
+          </div>
+          <div class="result-card" id="gradientCard" style="display: none;">
+            <div class="result-icon">📉</div>
+            <h3>Gradient Tomography</h3>
+            <p>نمودار گرادیان تغییرات سه‌بعدی</p>
+            <button class="btn btn-secondary" onclick="openGradient()">🔗 باز کردن نمودار</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 1405 GeoScanner Pro - تمامی حقوق محفوظ است</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
